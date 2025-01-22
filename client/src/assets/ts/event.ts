@@ -69,35 +69,6 @@ export const EventData = [
       registered: 220,
       location: "Dubai",
     },
-    {
-      name: "DAO Builders Meetup",
-      org_name: "DAO Collective",
-      date: "Feb 18, 2025",
-      registration: "Open",
-      registration_fee: 0,
-      image: "http://localhost:5173/src/assets/ethindia.png",
-      registered: 180,
-      location: "Berlin",
-    },
-    {
-      name: "Smart Contracts Workshop",
-      org_name: "DevChain Academy",
-      date: "Mar 14, 2025",
-      registration: "Open",
-      registration_fee: 40,
-      image: "http://localhost:5173/src/assets/ethindia.png",
-      registered: 250,
-      location: "Sydney",
-    },
-    {
-      name: "AI & Blockchain Conference",
-      org_name: "Tech Synergy",
-      date: "Apr 22, 2025",
-      registration: "Closed",
-      registration_fee: 120,
-      image: "http://localhost:5173/src/assets/ethindia.png",
-      registered: 420,
-      location: "Paris",
-    }
+
   ];
   
