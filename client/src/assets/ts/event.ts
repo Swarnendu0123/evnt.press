@@ -5,7 +5,7 @@ export const EventData = [
       date: "Jul 2, 2024",
       registration: "Open",
       registration_fee: 0,
-      image: "http://localhost:5173/src/assets/ethindia.png",
+      image: "/src/assets/ethindia.png",
       registered: 300,
       location: "Bangalore",
     },
