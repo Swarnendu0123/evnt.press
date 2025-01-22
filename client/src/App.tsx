@@ -10,9 +10,14 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Landing />} />
+
+        {/* org pages */}
         <Route path="/org" element={<OrganizationBrowser />} />
         <Route path="/org/:id" element={<Organization />} />
+        
+        {/* event pages */}
         <Route path="/event/:id" element={<Event />} />
+        <Route path="/event/create" element={<Event />} />
       </Routes>
     </>
   );
