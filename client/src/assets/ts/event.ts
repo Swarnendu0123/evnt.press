@@ -5,7 +5,7 @@ export const EventData = [
       date: "Jul 2, 2024",
       registration: "Open",
       registration_fee: 0,
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBlQAxuIO7pj06XiNdJrG32J8emLvjOC0nJQ&s",
+      image: "https://assets.devfolio.co/hackathons/97a12d19ff434e56abf9b7a33e631b02/assets/cover/25.png",
       registered: 300,
       location: "Bangalore",
     },
