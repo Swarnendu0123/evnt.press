@@ -5,7 +5,7 @@ export const EventData = [
       date: "Jul 2, 2024",
       registration: "Open",
       registration_fee: 0,
-      image: "/src/assets/ethindia.png",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBlQAxuIO7pj06XiNdJrG32J8emLvjOC0nJQ&s",
       registered: 300,
       location: "Bangalore",
     },
