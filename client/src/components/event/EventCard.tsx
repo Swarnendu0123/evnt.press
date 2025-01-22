@@ -46,7 +46,8 @@ const EventCard: React.FC<EventProps> = ({ data }) => {
 
   return (
     <div className="border border-white hover:border-gray-100 rounded-lg p-2 w-96 shadow-lg m-2 min-w-96">
-      <img src={image} alt="event" className="rounded-lg h-52" />
+        {/* fit the image */}
+      <img src={image} alt="event" className="rounded-lg h-52 w-full object-cover" />
       {/* the background should match the dominant color of the image */}
       <div className="text-left">
         {/* Event title */}

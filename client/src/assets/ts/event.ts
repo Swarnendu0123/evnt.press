@@ -1,5 +1,16 @@
 export const EventData = [
     {
+      name: "EIBS 2025",
+      org_name: "Blockchain Society",
+      date: "Jan 19, 2024",
+      registration: "Open",
+      registration_fee: 200,
+      image: "https://firebasestorage.googleapis.com/v0/b/care-for-health-1858e.appspot.com/o/East-India%E2%80%99s%20(1).png?alt=media&token=8eb7bca1-efe2-4295-b168-119d6d16c709",
+      registered: 300,
+      location: "Bangalore",
+      verified: true,
+    },
+    {
       name: "ETH India 2025",
       org_name: "ETH Global",
       date: "Jul 2, 2024",
@@ -19,7 +30,6 @@ export const EventData = [
       image: "https://file.chainup.com/pub/2024-07-23/13e88637-37ba-4959-9a29-3ad1e7d0dc63.webp",
       registered: 150,
       location: "San Francisco",
-      verified: true,
     },
     {
       name: "Blockchain Expo",
