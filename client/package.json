@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@uiw/react-md-editor": "^4.0.5",
     "node-vibrant": "^4.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
