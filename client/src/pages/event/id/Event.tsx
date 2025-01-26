@@ -4,7 +4,7 @@ import {
   MessageCircle,
   Bookmark,
   ChevronLeft,
-  Heart,
+  Heart
 } from "lucide-react";
 import Navigation from "../../../components/util/Navigation";
 

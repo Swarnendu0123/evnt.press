@@ -1,4 +1,4 @@
-import { Music2, Trophy, Utensils, Ticket, Palette, Mic2 } from "lucide-react";
+import { Music2, Trophy, Utensils, Ticket, Palette, Mic2, Building, Code } from "lucide-react";
 
 const Categories = () => {
   const categories = [
@@ -8,6 +8,8 @@ const Categories = () => {
     { name: "Theater", icon: <Ticket className="w-5 h-5" /> },
     { name: "Art", icon: <Palette className="w-5 h-5" /> },
     { name: "Comedy", icon: <Mic2 className="w-5 h-5" /> },
+    { name: "Business", icon: <Building className="w-5 h-5" /> },
+    { name: "Technology", icon: <Code className="w-5 h-5" /> },
   ];
 
   return (
