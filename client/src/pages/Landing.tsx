@@ -4,11 +4,20 @@ import Footer from "../components/util/Footer";
 import Location from "../components/util/Location";
 import Navigation from "../components/util/Navigation";
 import { EventData } from "../assets/ts/event";
+import Categories from "./Categories";
 
 const Landing = () => {
   return (
     <div>
       <Navigation />
+      <div className="mt-3">
+        <div>
+          <h2 className="font-bold text-gray-500">Select by Categories</h2>
+        </div>
+        <div className="mt-3">
+          <Categories />
+        </div>
+      </div>
       {/* Trending  start*/}
       <div className="mt-3">
         <div>
