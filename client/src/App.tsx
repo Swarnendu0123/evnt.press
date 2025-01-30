@@ -6,6 +6,7 @@ import OrganizationBrowser from "./pages/OrganizationBrowser";
 import CreateEvent from "./pages/event/create/CreateEvent";
 import Profile from "./pages/user/Profile";
 import Event from "./pages/event/id/Event";
+import Location from "./pages/location/LocationPage";
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
 
         {/* personal */}
         <Route path="/profile" element={<Profile />} />
+
+        {/* location */}
+        <Route path="/location/:id" element={<Location />} />
       </Routes>
     </>
   );
