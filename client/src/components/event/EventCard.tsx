@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Vibrant } from "node-vibrant/browser";
+import { Link, useParams } from "react-router-dom";
 
 interface EventProps {
   data: {
@@ -27,7 +28,8 @@ const EventCard: React.FC<EventProps> = ({ data }) => {
     location,
     verified,
   } = data;
-
+  const {id} = useParams<{id: string}>();
+  
   const [dominantColor, setdominantColor] = useState<string>("#000");
 
   useEffect(() => {
@@ -45,7 +47,8 @@ const EventCard: React.FC<EventProps> = ({ data }) => {
   }, [image]);
 
   return (
-    <div className="border border-white hover:border-gray-100 rounded-lg p-2 w-96 shadow-lg m-2 min-w-96">
+    <Link to={`/event/:${id}`}>
+      <div className="border border-white hover:border-gray-100 rounded-lg p-2 w-96 shadow-lg m-2 min-w-96">
         {/* fit the image */}
       <img src={image} alt="event" className="rounded-lg h-52 w-full object-cover" />
       {/* the background should match the dominant color of the image */}
@@ -197,6 +200,7 @@ const EventCard: React.FC<EventProps> = ({ data }) => {
         </div>
       </div>
     </div>
+    </Link>
   );
 };
 
