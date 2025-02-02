@@ -1,7 +1,34 @@
 import Avatar from "./Avatar";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import useSearch from './useSearch';
+interface EventProps {
+    
+  name: string;
+  org_name: string;
+  date: string;
+  registration: string;
+  registration_fee: number;
+  image: string;
+  registered: number;
+  location: string;
+  verified?: boolean;
+
+}
 
 const Navigation = () => {
+  const[input, setInput] = useState(" ");
+  const [searchTerm, setSearchTerm] = useState("")
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>)=>{
+    setInput(e.target.value);
+  }
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) =>{
+    if(e.key === "Enter"){
+      setSearchTerm(input);
+    }
+  }
+  const FilteredEvents: EventProps[] = useSearch(searchTerm); 
+  console.log(FilteredEvents)
   return (
     <div className="flex justify-between items-center">
       <div className=" text-left">
@@ -14,6 +41,9 @@ const Navigation = () => {
           type="text"
           placeholder="Search for events"
           className="border rounded-lg p-2 w-96 shadow-lg"
+          value={input}
+          onChange={handleChange}
+          onKeyDown={handleKeyDown}
         />
         <div className="mx-3">
           <Link
