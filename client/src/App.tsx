@@ -8,6 +8,7 @@ import Profile from "./pages/user/Profile";
 import Event from "./pages/event/id/Event";
 import Location from "./pages/location/LocationPage";
 import TicketDashboard from "./pages/event/dashboard/dashboard";
+import Browse from "./pages/Browse/Browse";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/event/:id" element={<Event />} />
         <Route path="/event/create" element={<CreateEvent />} />
         <Route path="/event/:id/dashboard" element={<TicketDashboard />} />
+        <Route path="/browse/:input" element={<Browse />} />
 
         {/* personal */}
         <Route path="/profile" element={<Profile />} />
