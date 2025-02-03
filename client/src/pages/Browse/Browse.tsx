@@ -1,8 +1,7 @@
 //Issues
-//1. When the searchBar is empty, the user should be redirected to the home page
-//2. The search bar should be cleared when the user is redirected to the home page
+//1. The search bar should be cleared when the user is redirected to the home page
 
-import { useRecoilValue,useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import { eventState, inputState, searchTermState } from "@/state/state";
 import EventCard from "@/components/event/EventCard";
 import Navigation from "@/components/util/Navigation";
@@ -23,15 +22,11 @@ interface EventProps {
 
 const Browse = () => {
   const events: EventProps[] = useRecoilValue(eventState);
-  const [input, setInput] = useRecoilState(inputState);
- const navigate = useNavigate();
-  useEffect(() => {
-    if (window.location.pathname === "/") {
-      // Reset inputState to its default value
-      setInput("")
-    }
-  }, [setInput,navigate]);
+  const input: string = useRecoilValue(inputState);
+  const navigate = useNavigate();
   const searchTerm: string = useRecoilValue(searchTermState);
+
+  //if the search bar is empty, redirect to the home page
   useEffect(() => {
     if (searchTerm.trim() === "") {
       navigate("/");

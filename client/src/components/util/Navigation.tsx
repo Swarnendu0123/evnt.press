@@ -25,7 +25,7 @@ const Navigation = () => {
   const [filteredEvents, setFilteredEvents] = useRecoilState<EventProps[]>(eventState);
   const navigate = useNavigate();
 
-  // Call useSearch() as a hook inside the component, not in useEffect
+  // Get search results
   const results = useSearch(searchTerm);
 
   // Update input value
@@ -33,7 +33,7 @@ const Navigation = () => {
     setInput(e.target.value);
   };
 
-  // Handle search when user presses Enter
+  // It set the searchTerm when the user presses Enter and then only the user is redirected to the browse page
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && input.trim() !== "") {
       setSearchTerm(input);
