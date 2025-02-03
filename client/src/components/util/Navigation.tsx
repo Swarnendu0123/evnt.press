@@ -1,9 +1,13 @@
+//Remove the filteredEvents from console.log and modify the code accordingly
+
 import Avatar from "./Avatar";
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import useSearch from './useSearch';
+import { Link,useNavigate } from "react-router-dom";
+import {  useEffect } from "react";
+import useSearch from "./useSearch";
+import { useRecoilState } from "recoil";
+import { eventState,inputState,searchTermState } from "@/state/state";
+
 interface EventProps {
-    
   name: string;
   org_name: string;
   date: string;
@@ -13,30 +17,52 @@ interface EventProps {
   registered: number;
   location: string;
   verified?: boolean;
-
 }
 
 const Navigation = () => {
-  const[input, setInput] = useState(" ");
-  const [searchTerm, setSearchTerm] = useState("")
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>)=>{
+  const [input, setInput] = useRecoilState(inputState);
+  const [searchTerm, setSearchTerm] = useRecoilState(searchTermState);
+  const [filteredEvents, setFilteredEvents] = useRecoilState<EventProps[]>(eventState);
+  const navigate = useNavigate();
+
+  // Call useSearch() as a hook inside the component, not in useEffect
+  const results = useSearch(searchTerm);
+
+  // Update input value
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
-  }
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) =>{
-    if(e.key === "Enter"){
+  };
+
+  // Handle search when user presses Enter
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter" && input.trim() !== "") {
       setSearchTerm(input);
+      navigate(`/browse/${input}`);
     }
-  }
-  const FilteredEvents: EventProps[] = useSearch(searchTerm); 
-  console.log(FilteredEvents)
+    if (e.key === "Enter" && input.trim() === "") {
+      navigate("/");
+    }
+  };
+
+  // Update Recoil state when results change
+  useEffect(() => {
+    setFilteredEvents(results);
+  }, [results, setFilteredEvents]);
+
+  console.log(filteredEvents); // Debugging log
+
   return (
     <div className="flex justify-between items-center">
-      <div className=" text-left">
+      {/* Left Section */}
+      <div className="text-left">
         <span className="text-2xl font-bold text-gray-500">Evnt.press</span>
         <hr />
-        <p className="text-gray-500">Explore Events, that excites you!</p>
+        <p className="text-gray-500">Explore events that excite you!</p>
       </div>
-      <div className="flex">
+
+      {/* Right Section */}
+      <div className="flex items-center">
+        {/* Search Input */}
         <input
           type="text"
           placeholder="Search for events"
@@ -45,6 +71,8 @@ const Navigation = () => {
           onChange={handleChange}
           onKeyDown={handleKeyDown}
         />
+
+        {/* Create Event Button */}
         <div className="mx-3">
           <Link
             className="bg-gray-500 hover:bg-black text-white font-bold py-2 px-4 rounded-lg flex items-center"
@@ -61,9 +89,9 @@ const Navigation = () => {
             </svg>
           </Link>
         </div>
-        <div>
-          <Avatar />
-        </div>
+
+        {/* Avatar Component */}
+        <Avatar />
       </div>
     </div>
   );
