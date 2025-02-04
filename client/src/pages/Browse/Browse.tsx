@@ -1,6 +1,5 @@
 //Issues
 //1. The search bar should be cleared when the user is redirected to the home page
-
 import { useRecoilValue } from "recoil";
 import { eventState, inputState, searchTermState } from "@/state/state";
 import EventCard from "@/components/event/EventCard";
@@ -25,7 +24,7 @@ const Browse = () => {
   const input: string = useRecoilValue(inputState);
   const navigate = useNavigate();
   const searchTerm: string = useRecoilValue(searchTermState);
-
+  const count: number = events.length;
   //if the search bar is empty, redirect to the home page
   useEffect(() => {
     if (searchTerm.trim() === "") {
@@ -35,13 +34,13 @@ const Browse = () => {
 
   return (
     <Link to={`/browse/${input}`}>
-      <div>
+      <div className="flex flex-col h-screen">
         <Navigation />
-        <div className="mt-3">
+        <div className="mt-3 flex-1">
           <div>
-            <h2 className="font-bold text-gray-500">Trending Events</h2>
+            <h2 className="font-bold text-gray-500">{count} {`${count===1?'event':'events'}`} found</h2>
           </div>
-          <div className="flex overflow-x-auto pb-3">
+          <div className="flex flex-wrap pb-3 ">
             {events.map((event) => (
               <EventCard data={event} />
             ))}
