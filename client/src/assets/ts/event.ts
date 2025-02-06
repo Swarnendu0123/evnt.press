@@ -1,5 +1,19 @@
-export const EventData = [
+export interface EventProps {
+  id: number;
+  name: string;
+  org_name: string;
+  date: string;
+  registration: string;
+  registration_fee: number;
+  image: string;
+  registered: number;
+  location: string;
+  verified?: boolean;
+}
+
+export const EventData:EventProps[] = [
   {
+    id: 1,
     name: "EIBS 2025",
     org_name: "Blockchain Society",
     date: "Jan 19, 2024",
@@ -12,6 +26,7 @@ export const EventData = [
     verified: true,
   },
   {
+    id: 2,
     name: "ETH India 2025",
     org_name: "ETH Global",
     date: "Jul 2, 2024",
@@ -24,6 +39,7 @@ export const EventData = [
     verified: true,
   },
   {
+    id: 3,
     name: "DeFi Summit 2024",
     org_name: "DeFi Alliance",
     date: "Aug 15, 2024",
@@ -35,6 +51,7 @@ export const EventData = [
     location: "San Francisco",
   },
   {
+    id: 4,
     name: "Blockchain Expo",
     org_name: "Blockchain Association",
     date: "Sep 20, 2024",
@@ -46,6 +63,7 @@ export const EventData = [
     location: "New York",
   },
   {
+    id: 5,
     name: "NFT Connect 2024",
     org_name: "NFT Global",
     date: "Oct 5, 2024",
@@ -57,6 +75,7 @@ export const EventData = [
     location: "Tokyo",
   },
   {
+    id: 6,
     name: "Web3 Hackathon",
     org_name: "Hackathon Central",
     date: "Nov 12, 2024",
@@ -68,6 +87,7 @@ export const EventData = [
     location: "London",
   },
   {
+    id: 7,
     name: "CryptoCon 2024",
     org_name: "CryptoCon Team",
     date: "Dec 1, 2024",
@@ -79,6 +99,7 @@ export const EventData = [
     location: "Singapore",
   },
   {
+    id: 8,
     name: "Metaverse Summit",
     org_name: "Metaverse Alliance",
     date: "Jan 25, 2025",

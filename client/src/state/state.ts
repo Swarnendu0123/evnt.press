@@ -1,16 +1,6 @@
 import { atom } from "recoil";
-import { EventData } from "@/assets/ts/event";
-interface EventProps {
-    name: string;
-    org_name: string;
-    date: string;
-    registration: string;
-    registration_fee: number;
-    image: string;
-    registered: number;
-    location: string;
-    verified?: boolean;
-  }
+import { EventData,EventProps } from "@/assets/ts/event";
+
 
 export const eventState = atom<EventProps[]>({
     key: "eventState",

@@ -6,23 +6,12 @@ import {  useEffect } from "react";
 import useSearch from "./useSearch";
 import { useRecoilState } from "recoil";
 import { eventState,inputState,searchTermState } from "@/state/state";
-
-interface EventProps {
-  name: string;
-  org_name: string;
-  date: string;
-  registration: string;
-  registration_fee: number;
-  image: string;
-  registered: number;
-  location: string;
-  verified?: boolean;
-}
+import { EventProps } from "@/assets/ts/event";
 
 const Navigation = () => {
   const [input, setInput] = useRecoilState(inputState);
   const [searchTerm, setSearchTerm] = useRecoilState(searchTermState);
-  const [filteredEvents, setFilteredEvents] = useRecoilState<EventProps[]>(eventState);
+  const [, setFilteredEvents] = useRecoilState<EventProps[]>(eventState);
   const navigate = useNavigate();
 
   // Get search results
@@ -49,7 +38,6 @@ const Navigation = () => {
     setFilteredEvents(results);
   }, [results, setFilteredEvents]);
 
-  console.log(filteredEvents); // Debugging log
 
   return (
     <div className="flex justify-between items-center">

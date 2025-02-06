@@ -1,18 +1,6 @@
 import { useState, useEffect } from "react";
-import { EventData } from "@/assets/ts/event";
-interface EventProps {
-    
-        name: string;
-        org_name: string;
-        date: string;
-        registration: string;
-        registration_fee: number;
-        image: string;
-        registered: number;
-        location: string;
-        verified?: boolean;
-    
-}
+import { EventData,EventProps } from "@/assets/ts/event";
+
 const useSearch = (searchTerm: string) => {
     
     const [filteredEvents, setFilteredEvents] = useState<EventProps[]>([]);
