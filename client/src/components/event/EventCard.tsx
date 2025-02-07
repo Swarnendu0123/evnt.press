@@ -1,21 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Vibrant } from "node-vibrant/browser";
-interface EventProps {
-  data: {
-    id: number;
-    name: string;
-    org_name: string;
-    date: string;
-    registration: string;
-    registration_fee: number;
-    image: string;
-    registered: number;
-    location: string;
-    verified?: boolean;
-  };
+import { EventProps } from "@/assets/ts/event";
+interface EventCardProps {
+  data: EventProps;
 }
 
-const EventCard: React.FC<EventProps> = ({ data }) => {
+const EventCard: React.FC<EventCardProps> = ({ data }) => {
   const {
     name,
     org_name,
@@ -27,7 +17,6 @@ const EventCard: React.FC<EventProps> = ({ data }) => {
     location,
     verified,
   } = data;
-  
   const [dominantColor, setdominantColor] = useState<string>("#000");
 
   useEffect(() => {
