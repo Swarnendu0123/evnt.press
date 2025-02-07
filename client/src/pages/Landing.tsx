@@ -5,6 +5,7 @@ import Location from "../components/util/Location";
 import Navigation from "../components/util/Navigation";
 import { EventData } from "../assets/ts/event";
 import Categories from "./Categories";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   return (
@@ -25,7 +26,9 @@ const Landing = () => {
         </div>
         <div className="flex overflow-x-auto pb-3">
           {EventData.map((event) => (
-            <EventCard data={event} />
+            <Link to={`/event/${event.id}`}>
+              <EventCard data={event} />
+            </Link>
           ))}
         </div>
       </div>
@@ -51,7 +54,9 @@ const Landing = () => {
         </div>
         <div className="flex overflow-x-auto pb-3">
           {EventData.map((event) => (
-            <EventCard data={event} />
+            <Link to={`/event/${event.id}`}>
+              <EventCard data={event} />
+            </Link>
           ))}
         </div>
       </div>

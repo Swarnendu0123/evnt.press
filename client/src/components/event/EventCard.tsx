@@ -1,22 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Vibrant } from "node-vibrant/browser";
-import { Link, useParams } from "react-router-dom";
-
-interface EventProps {
-  data: {
-    name: string;
-    org_name: string;
-    date: string;
-    registration: string;
-    registration_fee: number;
-    image: string;
-    registered: number;
-    location: string;
-    verified?: boolean;
-  };
+import { EventProps } from "@/assets/ts/event";
+interface EventCardProps {
+  data: EventProps;
 }
 
-const EventCard: React.FC<EventProps> = ({ data }) => {
+const EventCard: React.FC<EventCardProps> = ({ data }) => {
   const {
     name,
     org_name,
@@ -28,8 +17,6 @@ const EventCard: React.FC<EventProps> = ({ data }) => {
     location,
     verified,
   } = data;
-  const {id} = useParams<{id: string}>();
-  
   const [dominantColor, setdominantColor] = useState<string>("#000");
 
   useEffect(() => {
@@ -47,7 +34,7 @@ const EventCard: React.FC<EventProps> = ({ data }) => {
   }, [image]);
 
   return (
-    <Link to={`/event/:${id}`}>
+    
       <div className="border border-white hover:border-gray-100 rounded-lg p-2 w-96 shadow-lg m-2 min-w-96">
         {/* fit the image */}
       <img src={image} alt="event" className="rounded-lg h-52 w-full object-cover" />
@@ -200,7 +187,6 @@ const EventCard: React.FC<EventProps> = ({ data }) => {
         </div>
       </div>
     </div>
-    </Link>
   );
 };
 

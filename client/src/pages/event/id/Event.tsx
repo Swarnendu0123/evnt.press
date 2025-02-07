@@ -7,6 +7,9 @@ import {
   Heart
 } from "lucide-react";
 import Navigation from "../../../components/util/Navigation";
+import { EventData, EventProps } from "@/assets/ts/event";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const eventDetails = {
   title: "Shere Bangla Concert",
@@ -31,6 +34,19 @@ const eventDetails = {
 };
 
 export default function EventPage() {
+  // Get the event ID from the URL
+  const { id } = useParams<{ id: string }>();
+  const [event, setEvent] = useState<EventProps | undefined>(undefined);
+  // Find the event based on the ID
+  useEffect(() => {
+    const eventId = parseInt(id || "0",10);
+    const foundEvent:EventProps | undefined = EventData.find((event) => event.id === eventId);
+    setEvent(foundEvent);
+  }, [id])
+  if(!event) {
+    return <div>Event not found</div>
+  }
+
   return (
     <div className="min-h-screen">
       {/* Top Navigation */}
@@ -40,8 +56,8 @@ export default function EventPage() {
           {/* Left Column - Event Image */}
           <div className="relative h-[600px] rounded-3xl overflow-hidden">
             <img
-              src={eventDetails.image}
-              alt={eventDetails.title}
+              src={event.image}
+              alt={event.name}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -62,19 +78,19 @@ export default function EventPage() {
             <div className="flex justify-between items-start mb-8">
               <div>
                 <h1 className="text-3xl font-bold text-gray-900 mb-4">
-                  {eventDetails.title}
+                  {event.name}
                 </h1>
                 <div className="flex items-center mb-2 text-gray-600">
                   <MapPin className="w-5 h-5 mr-2" />
-                  <span className="text-base">{eventDetails.location}</span>
+                  <span className="text-base">{event.location}</span>
                 </div>
                 <div className="flex items-center text-gray-600">
-                  <span className="text-base">{eventDetails.date}</span>
+                  <span className="text-base">{event.date}</span>
                 </div>
               </div>
               <div className="bg-orange-100 px-4 py-2 rounded-xl">
                 <span className="text-orange-600 font-semibold text-lg">
-                  {eventDetails.price}
+                  {event.registration_fee}
                 </span>
               </div>
             </div>
