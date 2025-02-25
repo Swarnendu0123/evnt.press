@@ -9,7 +9,7 @@ import Footer from "@/components/util/Footer";
 
 const Location = () => {
     // extract the id 
-    const { id } = useParams<{ id?: string }>();
+    const { id } = useParams<{ id: string }>();
     const [filteredEvents] = useRecoilState<EventProps[]>(eventState)
     const events: EventProps[] = filteredEvents.filter((event)=> event.location === id);
     const count: number = events.length;
