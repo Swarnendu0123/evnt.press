@@ -30,13 +30,15 @@ const Browse: React.FC = () => {
         <Navigation />
         <div className="mt-3 flex-1">
           <div>
-            <h2 className="font-bold text-gray-500">
+            <h2 className="font-bold text-xl text-gray-500">
               {count} {count === 1 ? "event" : "events"} found
             </h2>
           </div>
           <div className="flex flex-wrap pb-3 ">
             {events.map((event) => (
-              <EventCard key={event.id} data={event} />
+              <Link to = {`/event/${event.id}`}>
+                <EventCard key={event.id} data={event} />
+              </Link>
             ))}
           </div>
         </div>

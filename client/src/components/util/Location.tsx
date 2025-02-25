@@ -7,7 +7,7 @@ interface LocationProps {
   };
 }
 
-const Location: React.FC<LocationProps> = ({ data }) => {
+const LocationCard: React.FC<LocationProps> = ({ data }) => {
   const { name, image } = data;
 
   return (
@@ -20,4 +20,4 @@ const Location: React.FC<LocationProps> = ({ data }) => {
   );
 };
 
-export default Location;
+export default LocationCard;

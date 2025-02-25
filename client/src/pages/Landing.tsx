@@ -1,11 +1,11 @@
 import { LocationsData } from "../assets/ts/location";
 import EventCard from "../components/event/EventCard";
 import Footer from "../components/util/Footer";
-import Location from "../components/util/Location";
 import Navigation from "../components/util/Navigation";
 import { EventData } from "../assets/ts/event";
 import Categories from "./Categories";
 import { Link } from "react-router-dom";
+import LocationCard from "../components/util/Location";
 
 const Landing = () => {
   return (
@@ -41,7 +41,7 @@ const Landing = () => {
         </div>
         <div className="flex">
           {LocationsData.map((location) => (
-            <Location data={location} />
+            <LocationCard data={location} />
           ))}
         </div>
       </div>
