@@ -30,9 +30,7 @@ const Location = () => {
               </Link>
             ))}
           </div>
-        </div>
-            <span className="text-xl font-bold text-gray-500">{count} results found</span>
-            
+        </div>            
           <Footer/>
         </div>
     );
