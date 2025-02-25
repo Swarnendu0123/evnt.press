@@ -1,0 +1,14 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Server",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run dev"
+  },
+  "author": "Swarnendu0123",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
