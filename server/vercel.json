@@ -1,0 +1,19 @@
+{
+    "version":2,
+    "builds": [
+      { "src": "*.ts", "use": "@vercel/node" }
+    ],
+    "routes": [
+        {
+          "src": "/src(.*)",
+          "dest": "/dist",
+            "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+                "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept, Origin, Authorization, X-Auth-Token",
+                "Access-Control-Allow-Credentials": "true"
+            }
+        }
+    ]
+}
