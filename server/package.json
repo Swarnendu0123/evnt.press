@@ -1,16 +1,19 @@
 {
-  "name": "server",
+  "name": "evnt.press/server",
   "version": "1.0.0",
-  "description": "Server",
+  "description": "Server of evnt.press",
   "main": "index.js",
   "scripts": {
-    "dev": "npx ts-node src/index.ts"
+    "build": "npx tsc",
+    "start": "node dist/index.js",
+    "dev": "nodemon src/index.ts"
   },
   "author": "Swarnendu0123",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.4.7",
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "mongoose": "^8.10.2"
   },
   "devDependencies": {
     "@types/express": "^5.0.0"

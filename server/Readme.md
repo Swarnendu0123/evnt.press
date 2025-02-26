@@ -27,5 +27,5 @@ npm install
 4. Run the server:
 
 ```bash
-npm start
+npm run dev
 ```
