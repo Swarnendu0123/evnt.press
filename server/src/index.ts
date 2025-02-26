@@ -16,14 +16,8 @@ app.use(express.urlencoded({ extended: true }));
 
 // root route
 app.get("/", (req: Request, res: Response) => {
-  res.send({
-    message: "Welcome to evnt.press server!",
-    api_docs: "https://expressjs.com/en/5x/api.html",
-    routes: {
-      "/api/v1/event": "To get all the events from version 1 API",
-      "/api/v1/event/:id": "To get a single event from version 1 API",
-    },
-  });
+  //   redirect to /api/v1
+  res.redirect("/api/v1");
 });
 
 app.use("/api/v1", v1router);

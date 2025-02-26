@@ -7,7 +7,7 @@
 - Express
 - Node.js
 
-entry point: `src/index.js`
+entry point: `src/index.ts`
 
 ## How to Run
 
