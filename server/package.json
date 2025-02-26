@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "start": "node src/index.js",
-    "build": "rimraf dist && tsc",
+    "build": "rimraf dist && npx tsc",
     "ts.check": "tsc --project tsconfig.json",
     "add-build": "git add dist",
     "test": "echo \"Error: no test specified\" && exit 1"
