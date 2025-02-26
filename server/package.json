@@ -4,11 +4,15 @@
   "description": "Server",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run dev"
+    "dev": "npx ts-node src/index.ts"
   },
   "author": "Swarnendu0123",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.7",
     "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0"
   }
 }
