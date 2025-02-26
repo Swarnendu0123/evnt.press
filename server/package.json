@@ -27,6 +27,11 @@
     "rimraf": "^6.0.1"
   },
   "devDependencies": {
-    "@types/express": "^5.0.0"
+    "typescript": "^5.3.3",
+    "ts-node": "^10.9.1",
+    "nodemon": "^3.0.2",
+    "@types/node": "^20.0.0",
+    "@types/express": "^5.0.0",
+    "@types/mongoose": "^5.11.97"
   }
 }
