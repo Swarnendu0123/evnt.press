@@ -9,7 +9,7 @@
       "add-build"
   ],
   "scripts": {
-    "start": "node src/index.js",
+    "start": "nodemon src/index.ts",
     "build": "rimraf dist && npx tsc",
     "ts.check": "tsc --project tsconfig.json",
     "add-build": "git add dist",
