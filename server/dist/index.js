@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const db_1 = require("./db");
-const event_1 = __importDefault(require("./api/v1/event"));
+const v1_1 = __importDefault(require("./api/v1"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = process.env.PORT || 3000;
@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
     //   redirect to /api/v1
     res.redirect("/api/v1");
 });
-app.use("/api/v1", event_1.default);
+app.use("/api/v1", v1_1.default);
 app.listen(port, () => {
     console.log(`[server]: Server is running at http://localhost:${port}`);
 });

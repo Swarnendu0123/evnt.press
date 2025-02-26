@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { EventModel } from "../../../db/schema";
+import { EventModel } from "../../db/schema";
 
 const router = Router();
 

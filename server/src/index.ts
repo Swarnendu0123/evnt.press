@@ -1,7 +1,7 @@
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 import { connectToDB } from "./db";
-import v1router from "./api/v1/event";
+import v1router from "./api/v1";
 
 dotenv.config();
 
