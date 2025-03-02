@@ -41,7 +41,6 @@ const Organization = () => {
     <div>
       <Navigation />
       <div className="min-h-screen mt-5 w-full flex flex-col items-center gap-4">
-        {/* Organization Banner */}
         <div className="relative w-4/5 h-64 border-0 shadow-lg overflow-hidden rounded-3xl">
           <img
             src={org.image}
@@ -51,17 +50,14 @@ const Organization = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/100"></div>
         </div>
 
-        {/* Organization Details */}
         <div className="w-4/5 text-left">
           <h1 className="text-4xl font-extrabold">{org.org_name}</h1>
           <p className="font-semibold text-base text-gray-500">{org.description}</p>
         </div>
 
-        {/* Events Section */}
         <div className="w-4/5 flex flex-col gap-4">
           <h2 className="font-bold text-lg">All Events</h2>
 
-          {/* Filter Buttons */}
           <div className="flex gap-4 text-left">
             {["Current", "Upcoming", "Closed"].map((category) => (
               <button
@@ -76,7 +72,6 @@ const Organization = () => {
             ))}
           </div>
 
-          {/* Events List */}
           <div className="flex flex-wrap w-full justify-start gap-4">
             {events.length > 0 ? (
               events.map((event) => (
